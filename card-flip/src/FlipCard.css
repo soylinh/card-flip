@@ -1,0 +1,49 @@
+.card {
+    width: 300px; /* Đặt chiều rộng cố định cho thẻ */
+    height: 400px; /* Đặt chiều cao cố định cho thẻ */
+    perspective: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.6s;
+  }
+  
+  /* Đảm bảo hình ảnh phù hợp với kích thước thẻ */
+  .card-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh bao phủ hết khung */
+    border-radius: 8px;
+  }
+  
+  
+  .card-front {
+    background-color: #4CAF50;
+  }
+  
+  .card-back {
+    background-color: #f44336;
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped .card-back {
+    transform: rotateY(0);
+  }
+  
